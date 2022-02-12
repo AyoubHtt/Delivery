@@ -1,4 +1,5 @@
 using API.Infrastructure.AutofacModules;
+using API.Infrastructure.DbContextConfiguration;
 using API.Infrastructure.Filter;
 using API.Infrastructure.Swagger;
 using Autofac;
@@ -13,6 +14,8 @@ builder.Services.AddControllers(options => { options.Filters.Add(typeof(HttpGlob
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerConfiguration();
+
+builder.Services.AddCustomDbContext(builder.Configuration);
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
