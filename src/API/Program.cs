@@ -24,6 +24,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
 {
     builder.RegisterModule(new ApplicationModule());
+    builder.RegisterModule(new MediatorModule());
 });
 
 var app = builder.Build();
