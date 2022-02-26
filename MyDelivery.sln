@@ -5,11 +5,13 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F2F147AA-5962-4DF6-AEE7-7613723F761D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{65F1D92D-2CD8-42BB-910D-B7D970261C88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{65F1D92D-2CD8-42BB-910D-B7D970261C88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{F8370D1C-019B-4552-AAF2-AD43F08A4279}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj", "{F8370D1C-019B-4552-AAF2-AD43F08A4279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{F4A15701-B770-440D-869C-AB06A3F2AF9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{F4A15701-B770-440D-869C-AB06A3F2AF9F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{57211DC1-C4BF-4155-AA14-CDE296518354}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{F4A15701-B770-440D-869C-AB06A3F2AF9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4A15701-B770-440D-869C-AB06A3F2AF9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4A15701-B770-440D-869C-AB06A3F2AF9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57211DC1-C4BF-4155-AA14-CDE296518354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57211DC1-C4BF-4155-AA14-CDE296518354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57211DC1-C4BF-4155-AA14-CDE296518354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57211DC1-C4BF-4155-AA14-CDE296518354}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
