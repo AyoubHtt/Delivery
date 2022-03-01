@@ -5,9 +5,17 @@ namespace API.Infrastructure.DbContextConfiguration
 {
     public static class DeliveryDbContextConfiguration
     {
-        public static IServiceCollection AddCustomDbContext(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCustomDbContext(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
-            services.AddDbContext<DeliveryContext>(options => options.UseSqlServer(configuration.GetConnectionString("Delivery_Connection_String")));
+            if (environment.IsDevelopment())
+            {
+                services.AddDbContext<DeliveryContext>(options => options.UseSqlServer(configuration.GetConnectionString("Delivery_Connection_String")));
+            }
+            else
+            {
+                services.AddDbContext<DeliveryContext>(options => options.UseSqlServer(configuration["Delivery_Connection_String"]));
+            }
+
 
             return services;
         }

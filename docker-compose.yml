@@ -6,3 +6,5 @@ services:
     build:
       context: .
       dockerfile: src/API/Dockerfile
+  deliverydb:
+    image: mcr.microsoft.com/mssql/server

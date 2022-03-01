@@ -2,9 +2,12 @@ version: '3.4'
 
 services:
   api:
+    container_name: mydelivery.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings.Delivery_Connection_String=Server=deliverydb;Database=DeliveryDB;User Id=sa;Password=Db123456.
+      - Delivery_Connection_String=Server=deliverydb;Database=DeliveryDB;User Id=sa;Password=Db123456.
       - ASPNETCORE_Kestrel__Certificates__Default__Password=Aa123456.
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/contoso.com.pfx
     ports:
@@ -13,3 +16,13 @@ services:
     volumes:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - /c/certs:/https/
+    depends_on:
+      - deliverydb
+  deliverydb:
+    container_name: deliverydb
+    environment:
+      SA_PASSWORD: "Db123456."
+      ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+      - "1433:1433"

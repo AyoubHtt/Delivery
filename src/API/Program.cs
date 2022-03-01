@@ -15,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerConfiguration();
 
-builder.Services.AddCustomDbContext(builder.Configuration);
+builder.Services.AddCustomDbContext(builder.Configuration,builder.Environment);
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
