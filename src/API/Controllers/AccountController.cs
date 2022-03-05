@@ -24,21 +24,11 @@ namespace API.Controllers
         [Route("user")]
         public IActionResult Create(CreateUserCommand request)
         {
-            //var resurlt = _bus.Send(request).Result;
+            var resurlt = _bus.Send(request).Result;
 
-            //if(resurlt) return Ok(resurlt);
+            if (resurlt) return Ok(resurlt);
 
-            //return BadRequest();
-
-            string? a;
-
-#if DEBUG
-            a = _configuration.GetConnectionString("Delivery_Connection_String");
-#else 
-            a = _configuration["Delivery_Connection_String"];
-#endif
-
-            return Ok(a);
+            return BadRequest();
         }
 
     }

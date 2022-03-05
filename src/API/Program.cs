@@ -1,3 +1,4 @@
+using API.Infrastructure.AuthConfiguration;
 using API.Infrastructure.AutofacModules;
 using API.Infrastructure.DbContextConfiguration;
 using API.Infrastructure.Filter;
@@ -15,7 +16,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerConfiguration();
 
-builder.Services.AddCustomDbContext(builder.Configuration,builder.Environment);
+builder.Services.AddCustomDbContext(builder.Configuration, builder.Environment);
+
+builder.Services.AddIdentityConfiguration();
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
