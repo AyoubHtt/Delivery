@@ -5,10 +5,12 @@ using API.Infrastructure.Filter;
 using API.Infrastructure.Swagger;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.OData;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(options => { options.Filters.Add(typeof(HttpGlobalExceptionFilter)); })
+                .AddOData()
                 .AddJsonOptions(options => { options.JsonSerializerOptions.WriteIndented = true; });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
